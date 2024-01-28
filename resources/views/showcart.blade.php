@@ -436,7 +436,7 @@
             <input class="form-control" name="nom" placeholder="Nom">
             <input class="form-control" type="number" name="phone" placeholder="Téléphone">
             <input class="form-control" type="text" name="adresse" placeholder="Adresse">
-            <button class="btn">COMMANDER</button>
+            <button class="btn mt-1">COMMANDER</button>
         </div>
     </div>
 

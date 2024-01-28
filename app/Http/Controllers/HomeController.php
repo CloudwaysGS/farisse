@@ -14,7 +14,7 @@ class HomeController extends Controller
         if (Auth::id()){
             return redirect('redirects');
         }else
-        $data = Repas::all();
+            $data = Repas::all();
         return view('accueil', compact("data"));
     }
 
@@ -51,7 +51,7 @@ class HomeController extends Controller
         if (Auth::id()) {
             $user_id = Auth::id();
             $food_id = $id;
-            $quantity = $request->quantity;
+            $quantity = $request->input('quantity');
 
             $cart = new Cart();
             $cart->user_id = $user_id;
