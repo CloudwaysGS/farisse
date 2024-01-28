@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class, 'index']);
 
+Route::get('/menu',[HomeController::class, 'menu']);
+
 Route::get('/redirects', [HomeController::class, 'redirects']);
 
 Route::get('/users', [AdminController::class, 'user']);

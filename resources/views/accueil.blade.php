@@ -70,7 +70,7 @@
                                     <nav>
                                         <ul id="navigation">
                                             <li><a href="{{url('/')}}">Accueil</a></li>
-                                            <li><a href="{{url('/redirects')}}">Menu</a></li>
+                                            <li><a href="{{url('/menu')}}">Menu</a></li>
                                             <li><a href="resta-master/contact.html">Réserver une table</a></li>
                                             <li>
 
@@ -134,7 +134,7 @@
                             <div class="slider_text text-center">
                                 <h3>Des Aliments frais et délicieux
                                      Pour votre santé</h3>
-                                <a href="resta-master/menu.html" class="boxed-btn3">Afficher Les Menus</a>
+                                <a href="{{url('/menu')}}" class="boxed-btn3">Afficher Les Menus</a>
                             </div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                             <div class="slider_text text-center">
                                 <h3>Des Aliments frais et délicieux
                                      Pour votre santé</h3>
-                                <a href="resta-master/menu.html" class="boxed-btn3">Afficher Les Menus</a>
+                                <a href="{{url('/menu')}}" class="boxed-btn3">Afficher Les Menus</a>
                             </div>
                         </div>
                     </div>
@@ -160,7 +160,7 @@
                             <div class="slider_text text-center">
                                 <h3>Des Aliments frais et délicieux
                                      Pour votre santé</h3>
-                                <a href="resta-master/menu.html" class="boxed-btn3">Afficher Les Menus</a>
+                                <a href="{{url('/menu')}}" class="boxed-btn3">Afficher Les Menus</a>
                             </div>
                         </div>
                     </div>
@@ -579,8 +579,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </script>
 
 
-    @stack('scripts')
-@livewireScripts
+
 </body>
 
 </html>

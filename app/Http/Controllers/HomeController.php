@@ -18,6 +18,14 @@ class HomeController extends Controller
         return view('accueil', compact("data"));
     }
 
+    public function menu(){
+
+        $data = Repas::all();
+        $user_id = Auth::id();
+        $count = Cart::where('user_id', $user_id)->count();
+        return view('menu', compact("data", "count"));
+    }
+
     public function redirects()
     {
         if (Auth::check()) {

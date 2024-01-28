@@ -55,7 +55,7 @@
                             <div class="col-xl-12">
                                     <ul class="nav justify-content-center" id="pills-tab" role="tablist">
                                             <li class="nav-item">
-                                              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="" role="tab" aria-controls="pills-home" aria-selected="true">
+                                              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#" role="tab" aria-controls="pills-home" aria-selected="true">
                                                   <div class="single_menu text-center">
                                                       <div class="icon">
                                                           <i class="flaticon-lunch"></i>
@@ -65,7 +65,7 @@
                                               </a>
                                             </li>
                                             <li class="nav-item">
-                                              <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="" role="tab" aria-controls="pills-profile" aria-selected="false">
+                                              <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#" role="tab" aria-controls="pills-profile" aria-selected="false">
                                                     <div class="single_menu text-center">
                                                             <div class="icon">
                                                                 <i class="flaticon-food"></i>
@@ -75,7 +75,7 @@
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                              <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="" role="tab" aria-controls="pills-contact" aria-selected="false">
+                                              <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#" role="tab" aria-controls="pills-contact" aria-selected="false">
                                                     <div class="single_menu text-center">
                                                             <div class="icon">
                                                                 <i class="flaticon-kitchen"></i>
@@ -84,6 +84,36 @@
                                                         </div>
                                                 </a>
                                             </li>
+                                        <li class="nav-item">
+                                              <a class="nav-link" id="fast-food" data-toggle="pill" href="#" role="tab" aria-controls="pills-contact" aria-selected="false">
+                                                    <div class="single_menu text-center">
+                                                            <div class="icon">
+                                                                <i class="flaticon-kitchen"></i>
+                                                            </div>
+                                                            <h4>Fast-foods</h4>
+                                                        </div>
+                                                </a>
+                                        </li>
+                                        <li class="nav-item">
+                                              <a class="nav-link" id="boissons" data-toggle="pill" href="#" role="tab" aria-controls="pills-contact" aria-selected="false">
+                                                    <div class="single_menu text-center">
+                                                            <div class="icon">
+                                                                <i class="flaticon-kitchen"></i>
+                                                            </div>
+                                                            <h4>Boissons</h4>
+                                                        </div>
+                                                </a>
+                                        </li>
+                                        <li class="nav-item">
+                                              <a class="nav-link" id="glaces" data-toggle="pill" href="#" role="tab" aria-controls="pills-contact" aria-selected="false">
+                                                    <div class="single_menu text-center">
+                                                            <div class="icon">
+                                                                <i class="flaticon-kitchen"></i>
+                                                            </div>
+                                                            <h4>Glaces</h4>
+                                                        </div>
+                                                </a>
+                                        </li>
                                     </ul>
                             </div>
                         </div>
@@ -122,13 +152,13 @@
                         <!-- Change the `data-field` of buttons and `name` of input field's for multiple plus minus buttons-->
                         <div class="input-group plus-minus-input">
                             <div class="input-group-button">
-                                <button type="button" class="button hollow circle" data-quantity="minus" data-field="quantity">
+                                <button type="button" class="button hollow circle" data-quantity="minus" data-field="quantity" onclick="updateQuantity(this)">
                                     <i class="fa fa-minus" aria-hidden="true"></i>
                                 </button>
                             </div>
-                            <input class="input-group-field" type="number" name="quantity" value="1">
+                            <input class="input-group-field" type="number" name="quantity" value="1" class="quantity-input" data-max="20">
                             <div class="input-group-button">
-                                <button type="button" class="button hollow circle" data-quantity="plus" data-field="quantity">
+                                <button type="button" class="button hollow circle" data-quantity="plus" data-field="quantity" onclick="updateQuantity(this)">
                                     <i class="fa fa-plus" aria-hidden="true"></i>
                                 </button>
                             </div>
@@ -257,6 +287,46 @@
 
     document.getElementById('pills-contact-tab').addEventListener('click', function () {
         filterMeals('dejeuner');
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Sélectionnez tous les ensembles de boutons
+        var plusMinusInputs = document.querySelectorAll('.plus-minus-input');
+
+        // Parcourez chaque ensemble
+        plusMinusInputs.forEach(function (inputGroup) {
+            // Récupérez l'élément d'entrée associé à cet ensemble
+            var inputField = inputGroup.querySelector('.input-group-field');
+
+            // Récupérez les boutons plus et moins de cet ensemble
+            var minusButton = inputGroup.querySelector('[data-quantity="minus"]');
+            var plusButton = inputGroup.querySelector('[data-quantity="plus"]');
+
+            // Attachez les gestionnaires d'événements aux boutons
+            minusButton.addEventListener('click', function () {
+                updateQuantity(inputField, 'minus');
+            });
+
+            plusButton.addEventListener('click', function () {
+                updateQuantity(inputField, 'plus');
+            });
+        });
+
+        // Fonction de mise à jour de la quantité
+        function updateQuantity(inputField, action) {
+            var currentValue = parseInt(inputField.value);
+
+            if (action === 'plus' && currentValue < 20) {
+                inputField.value = currentValue + 1;
+            } else if (action === 'minus' && currentValue > 1) {
+                inputField.value = currentValue - 1;
+            }
+
+            document.querySelector('[data-quantity="minus"]').disabled = (currentValue === 1);
+            document.querySelector('[data-quantity="plus"]').disabled = (currentValue === 20);
+        }
     });
 </script>
 

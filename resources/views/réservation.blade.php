@@ -1,3 +1,34 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Restaurant</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="resta-master/image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="resta-master/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resta-master/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="resta-master/css/magnific-popup.css">
+    <link rel="stylesheet" href="resta-master/css/font-awesome.min.css">
+    <link rel="stylesheet" href="resta-master/css/themify-icons.css">
+    <link rel="stylesheet" href="resta-master/css/gijgo.css">
+    <link rel="stylesheet" href="resta-master/css/nice-select.css">
+    <link rel="stylesheet" href="resta-master/css/flaticon.css">
+    <link rel="stylesheet" href="resta-master/css/slicknav.css">
+
+    <link rel="stylesheet" href="resta-master/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+
 <div class="container p-0">
     <div class="row">
         <div class="col-xl-12">
@@ -9,44 +40,8 @@
     <div class="row no-gutters">
         <div class="col-xl-6 col-lg-6">
             <div class="map_area">
-                <div id="map" style="height: 480px; position: relative; overflow: hidden;"> </div>
-                <script>
-                    function initMap() {
-                        var uluru = {
-                            lat: -25.363,
-                            lng: 131.044
-                        };
-                        var grayStyles = [{
-                            featureType: "all",
-                            stylers: [{
-                                saturation: -90
-                            },
-                                {
-                                    lightness: 50
-                                }
-                            ]
-                        },
-                            {
-                                elementType: 'labels.text.fill',
-                                stylers: [{
-                                    color: '#ccdee9'
-                                }]
-                            }
-                        ];
-                        var map = new google.maps.Map(document.getElementById('map'), {
-                            center: {
-                                lat: -31.197,
-                                lng: 150.744
-                            },
-                            zoom: 9,
-                            styles: grayStyles,
-                            scrollwheel: false
-                        });
-                    }
-                </script>
-                <script
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&amp;callback=initMap">
-                </script>
+                <div id="map" style="height: 480px; overflow: hidden;"> </div>
+
             </div>
         </div>
         <div class="col-lg-6">
@@ -128,3 +123,24 @@
         </div>
     </div>
 </div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+
+
+<script>
+    // Coordonnées pour le centre de la carte
+    var lat = 14.1389265;
+    var lng = -16.0758479;
+
+    // Créer la carte Leaflet
+    var mymap = L.map('map').setView([lat, lng], 13);
+
+    // Ajouter une couche de carte OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(mymap);
+
+    // Ajouter un marqueur à la carte
+    L.marker([lat, lng]).addTo(mymap);
+</script>

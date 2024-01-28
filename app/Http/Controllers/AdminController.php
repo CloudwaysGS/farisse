@@ -148,7 +148,7 @@ class AdminController extends Controller
 
     public function update(Request $request, $id)
     {
-        dd("ok");
+
         $data = Repas::find($id);
 
         if ($request->hasFile('Image') && $request->file('Image')->isValid()) {
@@ -158,7 +158,7 @@ class AdminController extends Controller
             $image->move('repasimage', $imageName);
 
             // Utiliser le service pour redimensionner l'image
-            $this->imageService->resizeImage('repasimage/' . $imageName, 166, 168);
+            $this->imageService->resizeImage('repasimage/' . $imageName, 166, 166);
 
             $data->image = $imageName;
         }
