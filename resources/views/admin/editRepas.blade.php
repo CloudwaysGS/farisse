@@ -33,6 +33,9 @@
                 <div class="form-group">
                     <input class="form-control" type="text" name="Description" value="{{$data->description}}" placeholder="Description" required>
                 </div>
+                <div class="form-group">
+                    <img width="50px" height="50px" src="/repasimage/{{$data->image}}">
+                </div>
 
                 <div class="form-group">
                     <label for="Image" style="color: black;">Nouvelle image</label>

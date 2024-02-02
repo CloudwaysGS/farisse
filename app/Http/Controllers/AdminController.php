@@ -55,12 +55,18 @@ class AdminController extends Controller
 
     public function addrepas()
     {
-        $usertype = Auth::user()->usertype;
-        if ($usertype == '1'){
-            $data = Repas::all();
-            return view("admin.addrepas", compact("data"));
+        if (Auth::check()){
+            $usertype = Auth::user()->usertype;
+            if ($usertype == '1'){
+
+                $data = Repas::all();
+
+                return view("admin.addrepas", compact("data"));
+            }else {
+                // L'utilisateur n'est pas authentifié, rediriger ou gérer cela en conséquence.
+                return redirect('/login');
+            }
         }else {
-            // L'utilisateur n'est pas authentifié, rediriger ou gérer cela en conséquence.
             return redirect('/login');
         }
     }
@@ -80,7 +86,7 @@ class AdminController extends Controller
                 $request->Image->move('repasimage', $imagename);
                 $data->image = $imagename;
 
-                $this->imageService->resizeImage('repasimage/' . $imagename, 250, 168);
+                $this->imageService->resizeImage('repasimage/' . $imagename, 250, 166);
 
                 $data->nom = $request->Nomproduit;
                 $data->prix = $request->Prix;
@@ -88,9 +94,7 @@ class AdminController extends Controller
                 $data->description = $request->Description;
                 $data->save();
 
-                Alert::success('succès', 'Les données ont été enregistrées avec succès.');
-
-                return redirect()->back();
+                return redirect('/repas')->with('success', 'Les données ont été enregistrées avec succès.');
             } else {
                 dd("Vous n'etes pas admin");
             }
@@ -158,7 +162,7 @@ class AdminController extends Controller
             $image->move('repasimage', $imageName);
 
             // Utiliser le service pour redimensionner l'image
-            $this->imageService->resizeImage('repasimage/' . $imageName, 166, 166);
+            $this->imageService->resizeImage('repasimage/' . $imageName, 250, 166);
 
             $data->image = $imageName;
         }
@@ -168,7 +172,7 @@ class AdminController extends Controller
         $data->categorie = $request->input('categorie');
         $data->description = $request->input('Description');
         $data->save();
-        return redirect()->back();
+        return redirect('/repas')->with('success', 'Les modifications ont été enregistrées avec succès.');
     }
 
     public function deleteRepas($id)

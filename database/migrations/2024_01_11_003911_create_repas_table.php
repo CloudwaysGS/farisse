@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nom')->nullable();
             $table->string('categorie')->nullable(); // Ajout de la colonne categorie
             $table->text('description')->nullable();
-            $table->decimal('prix', 8, 2)->nullable();
+            $table->float('prix')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });

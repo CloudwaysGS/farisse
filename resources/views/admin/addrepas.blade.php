@@ -52,6 +52,9 @@
                         <option value="petit-dejeuner">Petit-déjeuner</option>
                         <option value="dejeuner">Déjeuner</option>
                         <option value="diner">Dîner</option>
+                        <option value="diner">Fast-foods</option>
+                        <option value="diner">Boissons</option>
+                        <option value="diner">Glaces</option>
                     </select>
                     @error('categorie')
                     <span class="text-danger">{{$message}}</span>

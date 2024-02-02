@@ -185,18 +185,18 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="about_info_wrap">
-                            <h3>Sed ut perspiciatis unde  <br>
-                                omnis iste natus</h3>
+                            <h3>Mais pour que tu puisses voir d'où
+                                tout cela est né</h3>
                             <span class="long_dash"></span>
-                        <p>Omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi. Exercitation photo booth stumptown tote bag todo Banksy, elit small batch freegan sed. Craft beer elit seitan exercitation photo booth et 8-bit kale chips proident chillwave deep vow laborum. Aliquip veniam delectus, marfa eiusmod pinterest.</p>
+                        <p>Le premier restaurant reconnu comme tel est le "Parisian Boulanger" (Boulanger parisien), ouvert à Paris en 1765 par un homme du nom de Boulanger. Il a été le premier à offrir des plats à la carte, permettant aux clients de choisir parmi une variété d'options. Auparavant, les repas étaient généralement servis sous forme de table d'hôte, où tous les clients partageaient les mêmes plats.</p>
                         <ul class="food_list">
                             <li>
                                 <img src="resta-master/img/svg_icon/salad.svg" alt="">
-                                <span>Fresh Ingredients</span>
+                                <span>Ingrédients frais</span>
                             </li>
                             <li>
                                 <img src="resta-master/img/svg_icon/tray.svg" alt="">
-                                <span>Expert cooker</span>
+                                <span>Cuisinier expert</span>
                             </li>
                         </ul>
                     </div>
@@ -227,8 +227,8 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-50">
-                        <p>Testimonials</p>
-                        <h3>Our Customer’s Say</h3>
+                        <p>Témoignages</p>
+                        <h3>Les avis de nos clients</h3>
                     </div>
                 </div>
             </div>
@@ -238,9 +238,7 @@
                         <div class="single_carousel">
                             <div class="single_testmonial ">
                                 <div class="author_opinion">
-                                    <p>“Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor
-                                        sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed
-                                        neque.</p>
+                                    <p>“La satisfaction de nos clients est notre priorité. Nous nous efforçons de fournir un service de qualité supérieure. Notre équipe dévouée travaille sans relâche pour répondre à vos besoins et dépasser vos attentes.</p>
                                 </div>
                                 <div class="testmonial_author">
                                     <div class="thumb">
@@ -262,9 +260,7 @@
                         <div class="single_carousel">
                             <div class="single_testmonial ">
                                 <div class="author_opinion">
-                                    <p>“Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor
-                                        sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed
-                                        neque.</p>
+                                    <p>“La satisfaction de nos clients est notre priorité. Nous nous efforçons de fournir un service de qualité supérieure. Notre équipe dévouée travaille sans relâche pour répondre à vos besoins et dépasser vos attentes.</p>
                                 </div>
                                 <div class="testmonial_author">
                                     <div class="thumb">
@@ -286,9 +282,7 @@
                         <div class="single_carousel">
                             <div class="single_testmonial ">
                                 <div class="author_opinion">
-                                    <p>“Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor
-                                        sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed
-                                        neque.</p>
+                                    <p>“La satisfaction de nos clients est notre priorité. Nous nous efforçons de fournir un service de qualité supérieure. Notre équipe dévouée travaille sans relâche pour répondre à vos besoins et dépasser vos attentes..</p>
                                 </div>
                                 <div class="testmonial_author">
                                     <div class="thumb">
@@ -310,9 +304,7 @@
                         <div class="single_carousel">
                             <div class="single_testmonial ">
                                 <div class="author_opinion">
-                                    <p>“Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor
-                                        sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed
-                                        neque.</p>
+                                    <p>“La satisfaction de nos clients est notre priorité. Nous nous efforçons de fournir un service de qualité supérieure. Notre équipe dévouée travaille sans relâche pour répondre à vos besoins et dépasser vos attentes.</p>
                                 </div>
                                 <div class="testmonial_author">
                                     <div class="thumb">
@@ -334,9 +326,7 @@
                         <div class="single_carousel">
                             <div class="single_testmonial ">
                                 <div class="author_opinion">
-                                    <p>“Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor
-                                        sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed
-                                        neque.</p>
+                                    <p>“La satisfaction de nos clients est notre priorité. Nous nous efforçons de fournir un service de qualité supérieure. Notre équipe dévouée travaille sans relâche pour répondre à vos besoins et dépasser vos attentes.</p>
                                 </div>
                                 <div class="testmonial_author">
                                     <div class="thumb">
@@ -368,7 +358,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-75">
-                        <h3>Photo Gallery</h3>
+                        <h3>Galerie de photos</h3>
                     </div>
                 </div>
             </div>
@@ -428,8 +418,8 @@
                                     <img src="resta-master/img/footer_logo.png" alt="">
                                 </a>
                             </div>
-                            <p>5th flora, 700/D kings road, green <br> lane New York-1782 <br>
-                                <a href="#">+10 367 826 2567</a> <br>
+                            <p>4WQF+HM Kaolack, N1, Kaolack <br> Kaolack <br>
+                                <a href="#">+221 76 626 82 82</a> <br>
                                 <a href="#">contact@carpenter.com</a>
                             </p>
                             <p>

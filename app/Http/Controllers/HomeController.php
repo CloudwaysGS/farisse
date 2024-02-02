@@ -53,17 +53,29 @@ class HomeController extends Controller
             $food_id = $id;
             $quantity = $request->input('quantity');
 
-            $cart = new Cart();
-            $cart->user_id = $user_id;
-            $cart->food_id = $food_id;
-            $cart->quantity = $quantity;
+            // Check if the meal already exists in the cart for the current user
+            $existingCartItem = Cart::where('user_id', $user_id)
+                ->where('food_id', $food_id)
+                ->first();
 
-            $cart->save();
+            if ($existingCartItem) {
+                // If the meal exists, update the quantity
+                $existingCartItem->quantity += $quantity;
+                $existingCartItem->save();
+            } else {
+                // If the meal doesn't exist, create a new cart entry
+                $cart = new Cart();
+                $cart->user_id = $user_id;
+                $cart->food_id = $food_id;
+                $cart->quantity = $quantity;
+                $cart->save();
+            }
+
             $count = Cart::where('user_id', $user_id)->count();
 
             return response()->json([
                 'success' => true,
-                'message' => 'L\'article a été ajouté au panier avec succès.',
+                'message' => $existingCartItem ? 'La quantité du repas a été mise à jour.' : 'L\'article a été ajouté au panier avec succès.',
                 'count' => $count,
             ]);
         } else {
@@ -74,8 +86,8 @@ class HomeController extends Controller
         }
     }
 
-    public function showcart(Request $request, $id) {
 
+    public function showcart(Request $request, $id) {
 
         $count = Cart::where('user_id', $id)->count();
 

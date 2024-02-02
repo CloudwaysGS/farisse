@@ -150,7 +150,7 @@
 
                                 </div>
                                 <!-- Change the `data-field` of buttons and `name` of input field's for multiple plus minus buttons-->
-                                <div class="input-group plus-minus-input">
+                             <!--   <div class="input-group plus-minus-input">
                                     <div class="input-group-button">
                                         <button type="button" class="button hollow circle" data-quantity="minus" data-field="quantity" onclick="updateQuantity(this)">
                                             <i class="fa fa-minus" aria-hidden="true"></i>
@@ -162,7 +162,7 @@
                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                         </button>
                                     </div>
-                                </div>
+                                </div> -->
 
 
                             </div>
@@ -237,20 +237,25 @@
                     quantity: quantity
                 },
                 success: function(response) {
+                    console.log(response);
                     if (response.success) {
                         alert(response.message);
-                        // Mettre à jour le compteur du panier
+
+                        // Update the cart count in the UI
                         var cartCount = document.querySelector('.cart-count');
                         if (cartCount) {
                             cartCount.innerHTML = response.count;
                         }
+
+                        // Display a success message (you can use a notification library for a better user experience)
+                        console.log('Les modifications ont été enregistrées avec succès.');
                     } else {
                         alert(response.message);
                     }
                 },
                 error: function(xhr, status, error) {
                     if (xhr.status === 401) {
-                        // Redirection vers la page de connexion
+                        // Redirect to the login page if unauthorized
                         window.location.href = 'register';
                     } else {
                         console.error(error);
@@ -261,6 +266,8 @@
     });
 </script>
 
+
+
 <script>
     function filterMeals(category) {
         // Masquer tous les repas
@@ -270,7 +277,7 @@
         });
 
         // Afficher les repas de la catégorie sélectionnée
-        var selectedMeals = document.querySelectorAll('.' + category);
+        var selectedMeals = document.querySelectorAll('.' + category.toLowerCase()); // Convert to lowercase
         selectedMeals.forEach(function (meal) {
             meal.style.display = 'block';
         });
@@ -288,8 +295,21 @@
     document.getElementById('pills-contact-tab').addEventListener('click', function () {
         filterMeals('dejeuner');
     });
+
+    document.getElementById('fast-food').addEventListener('click', function () {
+        filterMeals('fast-foods'); // Corrected to lowercase
+    });
+
+    document.getElementById('boissons').addEventListener('click', function () {
+        filterMeals('boissons'); // Corrected to lowercase
+    });
+
+    document.getElementById('glaces').addEventListener('click', function () {
+        filterMeals('glaces'); // Corrected to lowercase
+    });
 </script>
 
+<!--
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         // Sélectionnez tous les ensembles de boutons
@@ -329,12 +349,8 @@
         }
     });
 </script>
+-->
 
-<script>
-    window.alert = function () {
-
-    }
-</script>
 
 
 

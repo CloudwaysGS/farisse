@@ -8,6 +8,11 @@
 @include("admin.dashbord")
 <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
     @include("admin.navbar")
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{session('success')}}
+        </div>
+    @endif
     <div class="row col-md-10 mx-auto shadow-2xl m-5">
         <button type="submit" class="form-control" style="color: white; margin-left: 80%; background-color: #7f007f; width: 19%"><a href="{{url('/addrepas')}}">Ajouter</a></button>
 
